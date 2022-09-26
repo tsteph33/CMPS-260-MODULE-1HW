@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CMPS 260: Module 4 Homework</title>
+<style>* { font-family: monospace; }</style>
+<script>
+//--------------------------//
+// The queue data structure //
+//--------------------------//
+console.log("The queue data structure");
+
+// None.
+
+
+
+//------------------//
+// Creating a queue //
+//------------------//
+console.log("Creating a queue");
+
+// 1. Implement the queue data structure using the prototype (as opposed to the
+//    version we wrote in class).
+var Queue = function() {
+  // Motion Man!
+};
+
+Queue.prototype.enqueue = function(item) {
+  // Motion Man!
+};
+
+Queue.prototype.dequeue = function() {
+  // Motion Man!
+};
+
+Queue.prototype.size = function() {
+  // Motion Man!
+};
+
+
+function Queue() {
+  // properties and methods go here
+  
+}
+
+Queue.prototype.enqueue = function(element) {
+  
+};
+
+
+
+// methods go here using Queue.prototype.
+
+// 2. Write a simple test program that shows your stack works.
+
+var queue = new Queue();
+console.log(queue.size()); // 0
+queue.enqueue('a');
+queue.enqueue('b');
+console.log(queue.size()); // 2
+console.log(queue.dequeue()); // a
+console.log(queue.dequeue()); // b
+console.log(queue.size()); // 0
+
+// 3. Add a method to Queue that returns the smallest value in the queue. Return
+//    null if there are no elements in the queue. Show that your method works.
+
+Queue.prototype.getMin = function() {
+  var maxItem = null;
+  
+  return maxItem;
+};
+
+var queue2 = new Queue();
+
+console.log(queue2.getMin()); // null
+queue2.enqueue(3);
+queue2.enqueue(2);
+queue2.enqueue(1);
+console.log(queue2.getMin()); // 1
+
+
+
+
+//-------------------------------------------//
+// The Queue class using ECMAScript 6 syntax //
+//-------------------------------------------//
+console.log("The Queue class using ECMAScript 6 syntax");
+
+// Skip.
+
+
+
+//--------------------//
+// The priority queue //
+//--------------------//
+console.log("The priority queue");
+
+// The following class is used below.
+
+// Create a function here..
+var added = false;
+// 1. Implement the priority queue data structure using the prototype (as
+//    opposed to the version we wrote in class).
+
+function PriorityQueue() {
+  // properties are initialized here
+  this.items = [];
+}
+
+// methods go here using PriorityQueue.prototype
+
+PriorityQueue.prototype.enqueue = function(element, priority) {
+  // we need to create a queue element that stores the priority as well
+  var queueElement = new QueueElement(element, priority);
+
+  // insert into priority queue (difficult part)
+  // note that this should be a min priority queue, meaning a lower value
+  // gets priority over a higher value
+  if (this.isEmpty()) {
+    this.items.push(queueElement);
+  } else {
+    var added = false;
+    for (var i = 0; i < this.size(); i++) {
+      if (queueElement.priority < this.items[i].priority) {
+        this.items.splice(i, 0, queueElement);
+        added = true;
+        break; 
+      }
+   
+
+// add the other methods as well
+PriorityQueue.prototype.dequeue = function() {
+ 
+};
+
+PriorityQueue.prototype.front = function() {
+  
+
+PriorityQueue.prototype.isEmpty = function() {
+  
+};
+
+PriorityQueue.prototype.size = function() {
+  
+};
+
+PriorityQueue.prototype.print = function() {
+  
+
+// 2. Write a simple test that makes sure the priority queue works as expected.
+var queue = new PriorityQueue();
+
+console.log(queue.size()); // 0
+queue.enqueue('a', 1);
+queue.enqueue('b', 2);
+queue.enqueue('c', 0);
+console.log(queue.size()); // 3
+console.log(queue.dequeue()); // c
+console.log(queue.dequeue()); // a
+console.log(queue.dequeue()); // b
+console.log(queue.size()); // 0
+
+
+//---------------------------------//
+// The circular queue - Hot Potato //
+//---------------------------------//
+console.log("The circular queue - Hot Potato");
+
+// None.
+
+
+
+//------------------------//
+// JavaScript task queues //
+//------------------------//
+console.log("JavaScript task queues");
+
+// Skip.
+
+
+
+//---------//
+// Project //
+//---------//
+console.log("Project");
+
+// 1. Create a queue that stores edibles, that can be either fruits or
+//    vegetables. Use the constructor below to create the edible and store a
+//    few of each kind in the queue (at least 3 of each).
+var Edible = function(name, type) {
+  this.name = name;
+  this.type = type;
+};
+
+var queue3 = new Queue();
+queue3.enqueue(new Edible('apple', 'fruit'));
+queue3.enqueue(new Edible('banana', 'fruit'));
+queue3.enqueue(new Edible('carrot', 'vegetable'));
+
+
+
+// 2. Create two more queues: one for fruits and one for vegetables. For this
+//    question, only create them (and leave them empty).
+var fruitQueue = new Queue();
+var vegetableQueue = new Queue();
+
+
+// 3. Dequeue all the elements from the edible queue and enqueue them in the
+//    appropriate queue, either for fruits or vegetables.
+
+while (queue3.size() > 0) {
+  var edible = queue3.dequeue();
+  if (edible.type === 'fruit') {
+    fruitQueue.enqueue(edible);
+  } else {
+    vegetableQueue.enqueue(edible);
+  }
+}
+
+// 4. Print the final contents to the console, showing that your code works.
+console.log('Fruit queue:');
+while (fruitQueue.size() > 0) {
+  var fruit = fruitQueue.dequeue();
+  console.log(fruit.name);
+}
+
+console.log('Vegetable queue:');
+while (vegetableQueue.size() > 0) {
+  var vegetable = vegetableQueue.dequeue();
+  console.log(vegetable.name);
+}
+
+
+
+</script>
+</head>
+<body>
+  See console!
+</body>
+</html>
