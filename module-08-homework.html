@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CMPS 260: Module 8 Homework</title>
+<style>* { font-family: monospace; }</style>
+<script>
+//--------------//
+// Dictionaries //
+//--------------//
+console.log("Dictionaries");
+
+// 1. Implement the dictionary data structure using the prototype (as opposed
+//    to the version we wrote in class).
+var dictionary = {
+  prototype: {
+    add: function(key, value) {
+      this[key] = value;
+    },
+    remove: function(key) {
+      delete this[key];
+    },
+    search: function(key) {
+      return this[key];
+    },
+    print: function() {
+      for (var key in this) {
+        console.log(key + " :
+
+// 
+
+// 2. Run some tests that show that your code works.
+var dictionary = new Dictionary();
+dictionary.add("cat", "a small, feline animal");
+dictionary.add("dog", "a loyal, man's best friend");
+dictionary.add("mouse", "a small, timid creature");
+console.log(dictionary.search("cat")); // prints "a small, feline animal"
+console.log(dictionary.search("dog")); // prints "a loyal
+
+
+//----------------//
+// The hash table //
+//----------------//
+console.log("The hash table");
+
+// 1. Implement the hash table data structure using the prototype (as opposed
+//    to the version we wrote in class). Use separate chaining to resolve
+//    collisions and the djb2 hash function for hashing.
+
+var hashTable = function() {
+  this.storage = [];
+  this.count = 0;
+  this.limit = 8;
+};
+
+hashTable.prototype.hashFunc = function(str, max) {
+  var hashCode = 0;
+  for (var i = 0; i < str.length; i++) {
+    hashCode = hashCode * 31 + str.charCodeAt(i);
+    hashCode =
+
+// 2. Run some tests that show that your code works.
+
+hashTable.prototype.hashFunc('test1', 8); // => 4
+hashTable.prototype.hashFunc('test2', 8); // => 5
+hashTable.prototype.hashFunc('test3', 8); // => 6
+
+// 3. The book discusses linear probing but their approach has a serious
+//    problem. What is the issue?
+// We need a second level of storage in each bucket. The hash table we create an array containing a fixed number of these buckets.
+var hash = 0;
+    for (var i=0;i< key.length;i++){
+        hash += key.charCodeAt(i)
+    }
+    return hash;
+}
+//    HINT: The issue can occur when there is a hash collision (two values
+//          mapped to the same index) in combination with a delete operation.
+
+
+
+//-------------------//
+// The ES6 Map class //
+//-------------------//
+console.log("The ES6 Map class");
+
+// Skip.
+
+
+
+//-------------------------------------//
+// The ES6 WeakMap and WeakSet classes //
+//-------------------------------------//
+console.log("The ES6 WeakMap and WeakSet classes");
+
+// Skip.
+
+
+
+//---------//
+// Project //
+//---------//
+console.log("Project");
+
+// 1. Complete the method below that adds all key-value pairs from one
+//    dictionary into another. See also the example below.
+
+Dictionary.prototype.merge = function(dict) {
+  for (var key in dict) {
+        this[key] = dict[key];
+    }
+};
+  // add all key-value pairs in 'dict' to 'this'
+};
+
+// Test your code by uncommenting these lines:
+//var dict1 = new Dictionary();
+//dict1.set("key1", "val1");
+//dict1.set("key2", "val2");
+//dict1.set("key3", "val3");
+//var dict2 = new Dictionary();
+//dict2.set("key3", "val3b");
+//dict2.set("key4", "val4");
+//dict1.merge(dict2);
+//dict1.print(); // should contain key1-val1, key2-val2, key3-val3b, key4-val4
+
+var dict1 = new Dictionary();
+dict1.set("key1", "val1");
+dict1.set("key2", "val2");
+dict1.set("key3", "val3");
+var dict2 = new Dictionary();
+dict2.set("key3", "val3b");
+dict2.set("key4", "val4");
+dict1.merge(dict2);
+dict1.print();
+
+
+</script>
+</head>
+<body>
+  See console!
+</body>
+</html>
